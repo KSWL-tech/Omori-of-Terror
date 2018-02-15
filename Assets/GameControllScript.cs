@@ -15,10 +15,24 @@ public class GameControllScript : MonoBehaviour {
     public int pace = 30;//バッテリーの持ち時間
     public float batteryn = 119;//バッテリーの総持ち時間
 
-	// Use this for initialization
-	void Start () {
-        //bc2 = bc;
-	}
+    public Image[] Parts;//パーツ
+    public  static int[] pn = new int [10];//パーツ取得判断　0：未取得　1：取得済み
+  //  private Graphic [] m_Graphic;
+
+
+
+
+    // Use this for initialization
+    void Start () {
+       //全パーツを半透明に
+        for (int i = 0; i < Parts.Length; i++)
+        {
+            pn[i] = 0;
+            Color c = Parts[i].color;
+            c.a = 0.5f;
+            Parts[i].color = c;
+        }
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -63,5 +77,15 @@ public class GameControllScript : MonoBehaviour {
 
         batteryn -= Time.deltaTime;
         //Debug.Log(batteryn);
+
+        //パーツ関連
+        //明るくする
+        for(int i = 0; i < Parts.Length; i++)
+        {
+            if(pn[i] == 1)
+            {
+                Parts[i].color = new Color(1, 1, 1, 1);
+            }
+        }
     }
 }
