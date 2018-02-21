@@ -17,8 +17,7 @@ public class GameControllScript : MonoBehaviour {
 
     public Image[] Parts;//パーツ
     public  static int[] pn = new int [10];//パーツ取得判断　0：未取得　1：取得済み
-  //  private Graphic [] m_Graphic;
-
+    public Color PartsColor;
 
 
 
@@ -28,9 +27,9 @@ public class GameControllScript : MonoBehaviour {
         for (int i = 0; i < Parts.Length; i++)
         {
             pn[i] = 0;
-            Color c = Parts[i].color;
-            c.a = 0.5f;
-            Parts[i].color = c;
+           // Color c = Parts[i].color;
+            //c.a = 0.5f;
+            Parts[i].color = PartsColor;
         }
     }
 	
