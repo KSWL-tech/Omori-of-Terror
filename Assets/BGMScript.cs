@@ -33,13 +33,29 @@ public class BGMScript : MonoBehaviour {
         //再生・停止
         if(dis < range && flag == false)
         {
+            audio.volume = 1;
             audio.Play() ;
             flag = true;
         }
         else if(dis >= range && flag == true)
         {
-            audio.Stop();
+            //audio.Stop();
+            StartCoroutine("Fadeout", 1.5f);
             flag = false;
         }
+    }
+    IEnumerator Fadeout(float duration)
+    {
+        float currentTime = 0.0f;
+        float waitTime = 0.02f;
+        float firstVol = audio.volume;
+        while (duration > currentTime)
+        {
+            currentTime += Time.fixedDeltaTime;
+            audio.volume = Mathf.Clamp01(firstVol * (duration - currentTime) / duration);
+            Debug.Log("Step:" + audio.volume);
+            yield return new WaitForSeconds(waitTime);
+        }
+        audio.Stop();
     }
 }
