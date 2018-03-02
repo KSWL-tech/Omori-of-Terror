@@ -26,6 +26,22 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!1 &1234546278633280
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4209146085133638}
+  - component: {fileID: 108640985078181624}
+  m_Layer: 0
+  m_Name: Spotlight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!1 &1370323922669628
 GameObject:
@@ -69,6 +85,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4943735175914212}
   - component: {fileID: 95172321165324082}
+  - component: {fileID: 114174078464977680}
   m_Layer: 0
   m_Name: Anagomorikun
   m_TagString: Untagged
@@ -89,6 +106,19 @@ Transform:
   m_Father: {fileID: 4943735175914212}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4209146085133638
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1234546278633280}
+  m_LocalRotation: {x: -0.7345174, y: -0.6736383, z: -0.0735752, w: 0.035811182}
+  m_LocalPosition: {x: -0.0028600076, y: -0.0025, z: 0.013520305}
+  m_LocalScale: {x: 0.006666667, y: 0.0066666696, z: 0.006666669}
+  m_Children: []
+  m_Father: {fileID: 4943735175914212}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: -171.273, y: 86.529, z: -84.784}
 --- !u!4 &4429213806955002
 Transform:
   m_ObjectHideFlags: 1
@@ -96,11 +126,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1124491570954940}
   m_LocalRotation: {x: -0.8191521, y: 0, z: 0, w: 0.57357645}
-  m_LocalPosition: {x: 0.00017425537, y: -0.01132, z: 0.00594}
+  m_LocalPosition: {x: -0.00315, y: 0.00038, z: 0.00355}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 4943735175914212}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -110, y: 0, z: 0}
 --- !u!4 &4626338115867304
 Transform:
@@ -121,16 +151,17 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1912601379512410}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 470.3111, y: 401.85, z: 164.68407}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 464.64197, y: 398.08, z: 167.53}
   m_LocalScale: {x: 150, y: 150, z: 150}
   m_Children:
   - {fileID: 4626338115867304}
   - {fileID: 4197481311360872}
+  - {fileID: 4209146085133638}
   - {fileID: 4429213806955002}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!20 &20927597041207504
 Camera:
   m_ObjectHideFlags: 1
@@ -225,6 +256,42 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!108 &108640985078181624
+Light:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1234546278633280}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 3
+  m_Range: 10
+  m_SpotAngle: 63
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!108 &108696680595677668
 Light:
   m_ObjectHideFlags: 1
@@ -233,9 +300,9 @@ Light:
   m_GameObject: {fileID: 1124491570954940}
   m_Enabled: 1
   serializedVersion: 8
-  m_Type: 0
+  m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 3
   m_Range: 10
   m_SpotAngle: 96
   m_CookieSize: 10
@@ -261,3 +328,19 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114174078464977680
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1912601379512410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47530e43a068bd04a8614ddcaa16ba12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  speed: 0.1
+  flag: 0
+  tibigomori: {fileID: 0}
+  tibiflag: 0
