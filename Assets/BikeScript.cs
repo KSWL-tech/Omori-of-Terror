@@ -1,0 +1,56 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class BikeScript : MonoBehaviour {
+
+    private GameObject GameController;
+    private bool flag = false;
+    public float speed = 10.0F;
+    public float rotationSpeed = 100.0F;
+    public GameObject cam;
+    
+
+
+    // Use this for initialization
+    void Start () {
+
+        GameController = GameObject.Find("GameController");
+
+        
+	}
+	
+	// Update is called once per frame
+	void FixedUpdate () {
+		if(flag == true)
+        {
+            float translation = Input.GetAxis("Vertical") * speed;
+            float rotation = Input.GetAxis("Horizontal") * rotationSpeed;
+            transform.Translate(0, 0, translation);
+            transform.Rotate(0, rotation, 0);
+
+        }
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+
+        if (collision.gameObject.tag == "Player")
+        {
+
+            Debug.Log("バイク当たってるで");
+
+            if (GameController.GetComponent<GameControllScript>().BikeFlag == true)
+            {
+                Debug.Log("バイク乗れるで");
+                GameController.GetComponent<GameControllScript>().Player.SetActive(false);
+                cam.GetComponent<Camera>().depth = 1;
+                flag = true;
+            }
+            else
+            {
+                Debug.Log("バイク乗られへんで");
+            }
+        }
+    }
+}

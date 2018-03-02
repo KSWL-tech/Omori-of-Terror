@@ -13,11 +13,13 @@ public class GameControllScript : MonoBehaviour {
     private int bc = 3 , bc2 = 1;
     private int bn, bn2;
     public int pace = 30;//バッテリーの持ち時間
-    public float batteryn = 119;//バッテリーの総持ち時間
+    public static float batteryn = 119;//バッテリーの総持ち時間
 
     public Image[] Parts;//パーツ
     public  static int[] pn = new int [10];//パーツ取得判断　0：未取得　1：取得済み
     public Color PartsColor;
+
+    public bool BikeFlag = false;
 
 
 
@@ -53,7 +55,7 @@ public class GameControllScript : MonoBehaviour {
         batteryn -= 1;
         bn = (int)(batteryn / pace) + 3;
         
-        Debug.Log(bn);
+       // Debug.Log(bn);
         if(bn != bn2)
         {
             for (int i = 4; i < Battery.Length; i++)
@@ -65,9 +67,7 @@ public class GameControllScript : MonoBehaviour {
                 else
                 {
                     Battery[i].SetActive(true);
-
                 }
-
             }
         }
         bn2 = bn;
@@ -85,6 +85,15 @@ public class GameControllScript : MonoBehaviour {
             {
                 Parts[i].color = new Color(1, 1, 1, 1);
             }
+        }
+
+        BikeFlag = true;
+        for (int i = 0; i < Parts.Length; i++)
+        {
+            if(pn[i] == 0)
+            {
+                BikeFlag = false;
+            } 
         }
     }
 }
