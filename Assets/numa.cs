@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class numa : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+    public GameObject anagomori;
+    public GameObject tibigomori;
+
+
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -24,6 +28,10 @@ public class numa : MonoBehaviour {
     void OnTriggerExit(Collider hit){
         if(hit.gameObject.tag=="Player"){
             UnityStandardAssets.Characters.FirstPerson.FirstPersonController.bufSpeed *= 2f;
+            anagomori.SetActive(false);
+            tibigomori.SetActive(true);
+
+            TibiAnimeScript.tibiflag = true;
         }
     }
 }
