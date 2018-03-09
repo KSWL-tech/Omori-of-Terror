@@ -5,10 +5,10 @@ using UnityEngine;
 public class AnagomoriScript : MonoBehaviour {
 
     public GameObject Player;
+
     public float speed;
     public bool flag = false;
     public GameObject tibigomori;
-    public bool tibiflag = false;
 
     Rigidbody rid;
 	// Use this for initialization
@@ -26,11 +26,7 @@ public class AnagomoriScript : MonoBehaviour {
             transform.Translate(0,0,speed);
         }
 
-        if(tibiflag == true)
-        {
-            tibi();
-            tibiflag = false;
-        }
+        
 
 	}
 
