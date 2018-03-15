@@ -24,6 +24,7 @@ public class TibiAnimeScript : MonoBehaviour {
             {
                 Debug.Log("z > 0.4");
                 StartCoroutine("playanim");
+                
             }
         }
 
@@ -34,6 +35,8 @@ public class TibiAnimeScript : MonoBehaviour {
         yield return new WaitForSeconds(1.0f);
         tibigoanim();
         tibiflag = false;
+        yield return new WaitForSeconds(2.0f);
+        numa.numaflag = false;
     }
 
 
