@@ -5,6 +5,7 @@ using UnityEngine;
 public class NumaGimmick : MonoBehaviour {
 
     public GameObject anagomori;
+    private bool flag = true;
 
 
     // Use this for initialization
@@ -22,6 +23,11 @@ public class NumaGimmick : MonoBehaviour {
         if (other.gameObject.tag == "Player")
         {
             anagomori.SetActive(true);
+            if (flag)
+            {
+                numa.numaflag = true;
+                flag = false;
+            }
         }
     }
 
