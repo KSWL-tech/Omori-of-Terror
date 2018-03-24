@@ -17,7 +17,7 @@ public class TibiAnimeScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        Debug.Log(PlayerCam.transform.rotation.x);
+       // Debug.Log(PlayerCam.transform.rotation.x);
         if (tibiflag == true)
         {
             if (PlayerCam.transform.rotation.x > 0.4)
