@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,13 +7,14 @@ public class honemoriControll : MonoBehaviour {
     public float diff=0,speed;
     Vector3 pos, pastpos;
     bool isNav = false;
+    UnityEngine.AI.NavMeshAgent agent;
 	// Use this for initialization
 	void Start () {
-        UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         agent.destination = target.transform.position; //destinationには追従したいオブジェクトの座標が入る
         pos = transform.position;
 	}
-
+    
     // Update is called once per frame
     void Update()
     {
