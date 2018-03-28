@@ -4928,15 +4928,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 1391182461711006, guid: da25155a776c0ec4b9803470272f4021, type: 2}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 218182367351337302, guid: da25155a776c0ec4b9803470272f4021,
-        type: 2}
-      propertyPath: m_LightmapParameters
-      value: 
-      objectReference: {fileID: 15203, guid: 0000000000000000f000000000000000, type: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: da25155a776c0ec4b9803470272f4021, type: 2}
   m_IsPrefabParent: 0
