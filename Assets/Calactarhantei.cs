@@ -7,8 +7,10 @@ public class Calactarhantei : MonoBehaviour
 
     public GameObject fronttobira;
     public GameObject backtobira;
-    
-    
+    private GameObject GameController;
+    public GameObject Bikecam;
+
+
     public GameObject Key;
 
     public static bool KeyFrag = false;
@@ -16,6 +18,7 @@ public class Calactarhantei : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        GameController = GameObject.Find("GameController");
 
     }
 
@@ -46,7 +49,20 @@ public class Calactarhantei : MonoBehaviour
         {
 
             Key.SetActive(false);
+            SEScript.PartsSound.PlayOneShot(SEScript.PartsSound.clip);
+
             KeyFrag = true;
+        }
+
+        if(hit.gameObject.tag == "Bike")
+        {
+            if (GameController.GetComponent<GameControllScript>().BikeFlag == true)
+            {
+                Debug.Log("バイク乗れるで");
+                GameController.GetComponent<GameControllScript>().Player.SetActive(false);
+                Bikecam.SetActive(true);
+                BikeScript.Controlflag = true;
+            }
         }
 
       

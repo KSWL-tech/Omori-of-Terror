@@ -22,6 +22,7 @@ public class BatteryScript : MonoBehaviour {
         if (other.gameObject.tag == "Player")
         {
             gameObject.SetActive(false);
+            SEScript.PartsSound.PlayOneShot(SEScript.PartsSound.clip);
             GameControllScript.batteryn += pace;
         }
     }
