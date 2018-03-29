@@ -5,10 +5,9 @@ using UnityEngine;
 public class BikeScript : MonoBehaviour {
 
     private GameObject GameController;
-    private bool flag = false;
+    public static bool Controlflag = false;
     public float speed = 10.0F;
     public float rotationSpeed = 100.0F;
-    public GameObject cam;
     
 
 
@@ -22,7 +21,7 @@ public class BikeScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		if(flag == true)
+		if(Controlflag == true)
         {
             float translation = Input.GetAxis("Vertical") * speed;
             float rotation = Input.GetAxis("Horizontal") * rotationSpeed;
@@ -35,7 +34,7 @@ public class BikeScript : MonoBehaviour {
     void OnCollisionEnter(Collision collision)
     {
 
-        if (collision.gameObject.tag == "Player")
+      /*  if (collision.gameObject.tag == "Player")
         {
 
             Debug.Log("バイク当たってるで");
@@ -51,6 +50,6 @@ public class BikeScript : MonoBehaviour {
             {
                 Debug.Log("バイク乗られへんで");
             }
-        }
+        }*/
     }
 }

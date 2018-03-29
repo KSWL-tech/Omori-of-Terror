@@ -8,6 +8,7 @@ TagManager:
   - Key
   - ori2
   - parts
+  - Bike
   layers:
   - Default
   - TransparentFX
