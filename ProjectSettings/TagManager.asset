@@ -9,6 +9,7 @@ TagManager:
   - ori2
   - parts
   - Bike
+  - Door
   layers:
   - Default
   - TransparentFX

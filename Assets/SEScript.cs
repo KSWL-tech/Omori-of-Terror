@@ -6,6 +6,8 @@ public class SEScript : MonoBehaviour {
 
     public static AudioSource PartsSound;
     public static AudioSource irondoor;
+    public static AudioSource Key;
+
 
 
     // Use this for initialization
@@ -14,10 +16,12 @@ public class SEScript : MonoBehaviour {
 
         PartsSound = audioSources[0];
         irondoor = audioSources[1];
+        Key = audioSources[2];
+
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 }
