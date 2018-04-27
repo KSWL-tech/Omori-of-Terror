@@ -9,6 +9,8 @@ public class Calactarhantei : MonoBehaviour
     public GameObject backtobira;
     private GameObject GameController;
     public GameObject Bikecam;
+    public GameObject door;
+
 
 
     public GameObject Key;
@@ -49,7 +51,7 @@ public class Calactarhantei : MonoBehaviour
         {
 
             Key.SetActive(false);
-            SEScript.PartsSound.PlayOneShot(SEScript.PartsSound.clip);
+            SEScript.Key.PlayOneShot(SEScript.Key.clip);
 
             KeyFrag = true;
         }
@@ -65,7 +67,14 @@ public class Calactarhantei : MonoBehaviour
             }
         }
 
-      
+
+        if (hit.gameObject.tag == "Door")
+        {
+            door.GetComponent<iTweenMove>().rotation("y", -90);
+            SEScript.irondoor.PlayOneShot(SEScript.irondoor.clip);
+
+        }
+
     }
 
 }
