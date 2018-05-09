@@ -64,6 +64,8 @@ public class Calactarhantei : MonoBehaviour
                 GameController.GetComponent<GameControllScript>().Player.SetActive(false);
                 Bikecam.SetActive(true);
                 BikeScript.Controlflag = true;
+                BikeScript.seflag = true;
+                //SEScript.Bike_start.PlayOneShot(SEScript.Bike_start.clip);
             }
         }
 

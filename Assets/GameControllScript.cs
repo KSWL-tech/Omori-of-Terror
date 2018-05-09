@@ -19,7 +19,7 @@ public class GameControllScript : MonoBehaviour {
     public  static int[] pn = new int [10];//パーツ取得判断　0：未取得　1：取得済み
     public Color PartsColor;
 
-    public bool BikeFlag = false;
+    public bool BikeFlag = true;
 
 
 
@@ -92,7 +92,7 @@ public class GameControllScript : MonoBehaviour {
         {
             if(pn[i] == 0)
             {
-                BikeFlag = false;
+               // BikeFlag = false;
             } 
         }
     }

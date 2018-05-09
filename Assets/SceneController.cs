@@ -17,7 +17,7 @@ public class SceneController : MonoBehaviour {
 
     public void changemain()
     {
-        SceneManager.LoadScene("main");
+        SceneManager.LoadScene("Nodoka");
     }
 
     public void changespecial()
