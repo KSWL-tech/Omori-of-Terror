@@ -16,10 +16,10 @@ public class GameControllScript : MonoBehaviour {
     public static float batteryn = 119;//バッテリーの総持ち時間
 
     public Image[] Parts;//パーツ
-    public  static int[] pn = new int [10];//パーツ取得判断　0：未取得　1：取得済み
+    public  static int[] pn = new int [4];//パーツ取得判断　0：未取得　1：取得済み
     public Color PartsColor;
 
-    public bool BikeFlag = true;
+    public bool BikeFlag = false;
 
 
 
@@ -92,7 +92,7 @@ public class GameControllScript : MonoBehaviour {
         {
             if(pn[i] == 0)
             {
-               // BikeFlag = false;
+                BikeFlag = false;
             } 
         }
     }
