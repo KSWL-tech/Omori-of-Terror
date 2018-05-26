@@ -29,4 +29,9 @@ public class SceneController : MonoBehaviour {
     {
         SceneManager.LoadScene("Title");
     }
+
+    public static void changegameover()
+    {
+        SceneManager.LoadScene("Gameover");
+    }
 }

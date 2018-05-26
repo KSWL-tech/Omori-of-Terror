@@ -7,9 +7,10 @@ TagManager:
   - ori
   - Key
   - ori2
-  - parts
   - Bike
+  - parts
   - Door
+  - Enemy
   layers:
   - Default
   - TransparentFX

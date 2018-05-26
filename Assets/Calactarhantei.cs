@@ -10,17 +10,20 @@ public class Calactarhantei : MonoBehaviour
     private GameObject GameController;
     public GameObject Bikecam;
     public GameObject door;
+    private PartsTextScript PartsTexts;
 
 
 
     public GameObject Key;
 
     public static bool KeyFrag = false;
+    
 
     // Use this for initialization
     void Start()
     {
         GameController = GameObject.Find("GameController");
+        PartsTexts = GameObject.Find("PartsTexts").GetComponent<PartsTextScript>();
 
     }
 
@@ -58,6 +61,7 @@ public class Calactarhantei : MonoBehaviour
 
         if(hit.gameObject.tag == "Bike")
         {
+            PartsTexts.PrintText();
             if (GameController.GetComponent<GameControllScript>().BikeFlag == true)
             {
                 Debug.Log("バイク乗れるで");
@@ -75,6 +79,11 @@ public class Calactarhantei : MonoBehaviour
             door.GetComponent<iTweenMove>().rotation("y", -90);
             SEScript.irondoor.PlayOneShot(SEScript.irondoor.clip);
 
+        }
+
+        if (hit.gameObject.tag == "Enemy")
+        {
+            SceneController.changegameover();
         }
 
     }
