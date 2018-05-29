@@ -76,7 +76,7 @@ public class Calactarhantei : MonoBehaviour
 
         if (hit.gameObject.tag == "Door")
         {
-            door.GetComponent<iTweenMove>().rotation("y", -90);
+            door.GetComponent<iTweenMove>().rotation();
             SEScript.irondoor.PlayOneShot(SEScript.irondoor.clip);
 
         }
