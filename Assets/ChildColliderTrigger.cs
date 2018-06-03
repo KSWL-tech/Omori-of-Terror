@@ -20,7 +20,7 @@ public class ChildColliderTrigger : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Player")
         {
-            parent.GetComponent<Ori_front>().open();
+           // parent.GetComponent<Ori_front>().open();
             Debug.Log("open");
         }
     }

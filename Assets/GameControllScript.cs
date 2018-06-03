@@ -13,8 +13,8 @@ public class GameControllScript : MonoBehaviour {
     private int bc = 3 , bc2 = 1;
     private int bn, bn2;
     public int pace = 30;//バッテリーの持ち時間
-    //public static float batteryn = 119;//バッテリーの総持ち時間
-    public static float batteryn = 20;//バッテリーの総持ち時間
+    public static float batteryn = 119;//バッテリーの総持ち時間
+    //public static float batteryn = 20;//バッテリーの総持ち時間
 
 
     public Image[] Parts;//パーツ

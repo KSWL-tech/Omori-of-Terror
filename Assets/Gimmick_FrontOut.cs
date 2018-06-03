@@ -11,18 +11,25 @@ public class Gimmick_FrontOut : MonoBehaviour {
 
     private bool flag = false; //範囲に入ったらtrue
 
+    [SerializeField]
+    private float speed;
+
+    Rigidbody rid;
+
 
 	// Use this for initialization
 	void Start () {
         Monster.SetActive(false);//消す
+        rid = Monster.GetComponent<Rigidbody>();
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		if(flag == true)
         {
             //trueになったら進む
-            Monster.transform.position += new Vector3(0.3f,0,0);　
+            Monster.transform.Translate(0,0,speed);
+            
         }
 
 	}
