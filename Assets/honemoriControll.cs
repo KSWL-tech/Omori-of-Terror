@@ -20,9 +20,14 @@ public class honemoriControll : MonoBehaviour {
     {
         //NavMeshによる自動追従は常におこない、普段はLooakatによる移動を優先して行う。どこかにハマって動けなくなったとき、前フレームと比べた時の位置が非常に近くなるため、isNavをtrueにし、NavMeshによる追従のみにすることでこれを脱する。
         transform.LookAt(target.transform);
+        agent.SetDestination(target.transform.position);
+        /*
         if (!isNav)
         {
-            transform.Translate(0, 0, speed);
+            //transform.Translate(0, 0, speed);
+            agent.Move(transform.position-target.transform.position);
+        }else {
+            agent.destination=target.transform.position;
         }
 
         pastpos = pos;
@@ -32,5 +37,6 @@ public class honemoriControll : MonoBehaviour {
             isNav = true;
         }
         else isNav = false;
+        */
     }
 }
