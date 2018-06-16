@@ -10,6 +10,8 @@ public class SEScript : MonoBehaviour {
     public static AudioSource Bike_start;
     public static AudioSource Bike_idle;
     public static AudioSource Bike_go;
+    public static AudioSource Door;
+
 
 
 
@@ -24,6 +26,8 @@ public class SEScript : MonoBehaviour {
         Bike_start = audioSources[3];
         Bike_idle = audioSources[4];
         Bike_go = audioSources[5];
+        Door = audioSources[6];
+
 
 
     }
