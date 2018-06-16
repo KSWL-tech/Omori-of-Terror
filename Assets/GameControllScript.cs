@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class GameControllScript : MonoBehaviour {
 
     public GameObject Player;
+    [SerializeField]
+    private float timespeed;
 
     // 0 ～ 3: 残量
     // 1 ～ n: 個数
@@ -78,7 +80,7 @@ public class GameControllScript : MonoBehaviour {
         batteryn += 1;
 
 
-        batteryn -= Time.deltaTime;
+        batteryn -= Time.deltaTime * timespeed ;
 
         //バッテリー切れ処理
         if(batteryn < 0 && batteryend  == false)

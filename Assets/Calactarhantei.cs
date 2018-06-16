@@ -10,6 +10,7 @@ public class Calactarhantei : MonoBehaviour
     private GameObject GameController;
     public GameObject Bikecam;
     public GameObject door;
+    public GameObject locker;
     private PartsTextScript PartsTexts;
 
 
@@ -77,6 +78,7 @@ public class Calactarhantei : MonoBehaviour
         if (hit.gameObject.tag == "Door")
         {
             door.GetComponent<iTweenMove>().rotation();
+            door.GetComponent<SphereCollider>().enabled = false;
             SEScript.irondoor.PlayOneShot(SEScript.irondoor.clip);
 
         }
@@ -84,6 +86,15 @@ public class Calactarhantei : MonoBehaviour
         if (hit.gameObject.tag == "Enemy")
         {
             SceneController.changegameover();
+        }
+
+        if (hit.gameObject.tag == "LockerDoor")
+        {
+            print("ロッカー");
+            locker.GetComponent<iTweenMove>().rotation();
+            hit.collider.isTrigger = true;
+            SEScript.Door.PlayOneShot(SEScript.Door.clip);
+
         }
 
     }

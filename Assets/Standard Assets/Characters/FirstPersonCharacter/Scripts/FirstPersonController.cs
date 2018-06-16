@@ -45,6 +45,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public static float bufSpeed=1f;
 
         public static bool numasound;
+        public static bool normalsound;
 
         // Use this for initialization
         private void Start()
@@ -61,6 +62,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 			m_MouseLook.Init(transform , m_Camera.transform);
 
             numasound = false;
+            normalsound = true;
         }
 
 
@@ -177,6 +179,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
             int n = Random.Range(1, m_FootstepSounds.Length);
             n = 1;
             m_AudioSource.clip = m_FootstepSounds[n];
+
+            /*if (normalsound)
+            {
+                m_AudioSource.clip = m_FootstepSounds[3];
+                m_AudioSource.Play();
+                return;
+            }*/
 
             if (numasound)
             {
