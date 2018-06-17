@@ -12,6 +12,7 @@ TagManager:
   - Door
   - Enemy
   - LockerDoor
+  - Obstacle
   layers:
   - Default
   - TransparentFX
