@@ -9,7 +9,13 @@ public class BikeScript : MonoBehaviour {
     public static bool seflag = false;
     public float speed = 10.0F;
     public float rotationSpeed = 100.0F;
-    
+    public float breakingspeed;
+    private bool breaking = false;
+
+    public GameObject breaked_enemy;
+    public GameObject BikeCamera;
+    public GameObject Bike_Mazzle;
+
 
 
     // Use this for initialization
@@ -26,16 +32,28 @@ public class BikeScript : MonoBehaviour {
         {
             float translation = Input.GetAxis("Vertical") * speed;
             float rotation = Input.GetAxis("Horizontal") * rotationSpeed;
-            transform.Translate(0, 0, translation);
+            transform.Translate(0, 0, speed);
             transform.Rotate(0, rotation, 0);
 
+        }
+
+        if (breaking && speed > 0)
+        {
+            speed -= breakingspeed;
+        }
+
+        if (speed < 0)
+        {
+            Controlflag = false;
+            speed = 0;
+            StartCoroutine("GameOver");
         }
     }
 
     void Update()
     {
 
-        if (seflag == true)
+       /* if (seflag == true)
         {
             if (Input.GetKeyDown(KeyCode.W))
             {
@@ -49,28 +67,37 @@ public class BikeScript : MonoBehaviour {
                 SEScript.Bike_idle.Play();
             }
 
-        }
+        }*/
+    }
+
+    private void breaked()
+    {
+        breaking = true;
+        SEScript.Bike_go.Stop();
+
+    }
+
+    IEnumerator GameOver()
+    {
+        yield return new WaitForSeconds(2);
+        breaked_enemy.GetComponent<BatteryGameOver>().player = BikeCamera;
+        breaked_enemy.GetComponent<BatteryGameOver>().player_muzzle = Bike_Mazzle;
+        breaked_enemy.GetComponent<BatteryGameOver>().BatteryLost();
+
     }
 
     void OnCollisionEnter(Collision collision)
     {
-
-      /*  if (collision.gameObject.tag == "Player")
+        if(collision.gameObject.tag == "Obstacle")
         {
+            breaked();
+        }
 
-            Debug.Log("バイク当たってるで");
+        if (collision.gameObject.tag == "Enemy")
+        {
+            SceneController.changegameover();
+            print("enemy");
+        }
 
-            if (GameController.GetComponent<GameControllScript>().BikeFlag == true)
-            {
-                Debug.Log("バイク乗れるで");
-                GameController.GetComponent<GameControllScript>().Player.SetActive(false);
-                cam.GetComponent<Camera>().depth = 1;
-                flag = true;
-            }
-            else
-            {
-                Debug.Log("バイク乗られへんで");
-            }
-        }*/
     }
 }

@@ -66,6 +66,7 @@ public class Calactarhantei : MonoBehaviour
             if (GameController.GetComponent<GameControllScript>().BikeFlag == true)
             {
                 Debug.Log("バイク乗れるで");
+                SEScript.Bike_go.Play();
                 GameController.GetComponent<GameControllScript>().Player.SetActive(false);
                 Bikecam.SetActive(true);
                 BikeScript.Controlflag = true;
