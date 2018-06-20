@@ -44,7 +44,7 @@ public class numa : MonoBehaviour {
             UnityStandardAssets.Characters.FirstPerson.FirstPersonController.numasound = false;
 
             anagomori.SetActive(false);
-            tibigomori.SetActive(true);
+           // tibigomori.SetActive(true);
 
             TibiAnimeScript.tibiflag = true;
         }
