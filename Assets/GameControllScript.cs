@@ -107,7 +107,7 @@ public class GameControllScript : MonoBehaviour {
         {
             if(pn[i] == 0)
             {
-               // BikeFlag = false;
+                BikeFlag = false;
             } 
         }
 

@@ -79,7 +79,7 @@ public class BikeScript : MonoBehaviour {
 
     IEnumerator GameOver()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(3);
         breaked_enemy.GetComponent<BatteryGameOver>().player = BikeCamera;
         breaked_enemy.GetComponent<BatteryGameOver>().player_muzzle = Bike_Mazzle;
         breaked_enemy.GetComponent<BatteryGameOver>().BatteryLost();
