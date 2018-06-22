@@ -22,7 +22,7 @@ public class BikeTeleport : MonoBehaviour {
         if(other.gameObject.tag == "Bike")
         {
             other.transform.position = new Vector3(other.transform.position.x, other.transform.position.y,teleportposition.position.z );
-            envir.transform.position = new Vector3(envir.transform.position.x, envir.transform.position.y, teleportposition.position.z );
+           // envir.transform.position = new Vector3(envir.transform.position.x, envir.transform.position.y, teleportposition.position.z );
         }
     }
 
