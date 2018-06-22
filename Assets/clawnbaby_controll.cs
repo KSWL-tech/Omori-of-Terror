@@ -20,6 +20,7 @@ public class clawnbaby_controll : MonoBehaviour {
 	void Update () {
         transform.LookAt(target.transform.position);
         agent.SetDestination(target.transform.position);
+        transform.rotation=def_rotation;
         /* 
         if (!isNav) //ハマるまでは単純にTranslate
         {
@@ -31,7 +32,7 @@ public class clawnbaby_controll : MonoBehaviour {
         {
             
         }
-        transform.rotation=def_rotation;
+        
         pastpos = pos;
         pos = transform.position;
         if (Vector3.Distance(pastpos, pos) < diff) isNav = true;
