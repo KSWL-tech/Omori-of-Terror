@@ -29,6 +29,10 @@ public class GameControllScript : MonoBehaviour {
 
 
 
+    [SerializeField] private bool debug;
+
+
+
     // Use this for initialization
     void Start () {
        //全パーツを半透明に
@@ -107,7 +111,10 @@ public class GameControllScript : MonoBehaviour {
         {
             if(pn[i] == 0)
             {
-                BikeFlag = false;
+                if (debug == false)
+                {
+                    BikeFlag = false;
+                }
             } 
         }
 
