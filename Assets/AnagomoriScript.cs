@@ -17,7 +17,7 @@ public class AnagomoriScript : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
         transform.LookAt(Player.transform);
 
         if (flag == true)
