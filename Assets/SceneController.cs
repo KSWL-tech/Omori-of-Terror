@@ -12,8 +12,11 @@ public class SceneController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+    }
 
     public void changemain()
     {
@@ -33,5 +36,10 @@ public class SceneController : MonoBehaviour {
     public static void changegameover()
     {
         SceneManager.LoadScene("Gameover");
+    }
+
+    public void quit()
+    {
+        Application.Quit();
     }
 }
