@@ -93,6 +93,8 @@ public class BikeScript : MonoBehaviour {
             breaked();
         }
 
+
+        print(collision.gameObject.name);
         if (collision.gameObject.tag == "Enemy")
         {
             SceneController.changegameover();
