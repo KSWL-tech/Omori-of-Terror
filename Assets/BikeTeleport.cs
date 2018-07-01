@@ -6,6 +6,7 @@ public class BikeTeleport : MonoBehaviour {
 
     public Transform teleportposition;
     public GameObject envir;
+    [SerializeField] private float move_value;
 
 	// Use this for initialization
 	void Start () {
@@ -21,8 +22,13 @@ public class BikeTeleport : MonoBehaviour {
     {
         if(other.gameObject.tag == "Bike")
         {
-            other.transform.position = new Vector3(other.transform.position.x, other.transform.position.y,teleportposition.position.z );
-           // envir.transform.position = new Vector3(envir.transform.position.x, envir.transform.position.y, teleportposition.position.z );
+            //other.transform.position = new Vector3(other.transform.position.x, other.transform.position.y,teleportposition.position.z );
+            teleportposition.transform.position = new Vector3(other.transform.position.x, teleportposition.transform.position.y, other.transform.position.z);
+            teleportposition.Translate(0, 0, move_value);
+            // envir.transform.position = new Vector3(envir.transform.position.x, envir.transform.position.y, teleportposition.position.z );
+            other.transform.position = new Vector3(teleportposition.transform.position.x, other.transform.position.y,teleportposition.position.z );
+
+            //other.transform.Translate(0, 0, move_value);
         }
     }
 
