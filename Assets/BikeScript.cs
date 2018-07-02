@@ -22,6 +22,8 @@ public class BikeScript : MonoBehaviour {
     void Start () {
 
         GameController = GameObject.Find("GameController");
+        Controlflag = false;
+        seflag = false;
 
         
 	}
@@ -47,6 +49,11 @@ public class BikeScript : MonoBehaviour {
             Controlflag = false;
             speed = 0;
             StartCoroutine("GameOver");
+        }
+
+        if(transform.position.y < 250)
+        {
+            SceneController.changegameover();
         }
     }
 

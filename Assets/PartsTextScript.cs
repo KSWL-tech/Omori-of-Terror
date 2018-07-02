@@ -27,12 +27,19 @@ public class PartsTextScript : MonoBehaviour {
             anim.SetTrigger("On");
             flag = false;
         }
-        for(int i = 0; i < GameControllScript.pn.Length; i++)
+        for(int i = 0; i < GameControllScript.pn.Length - 1; i++)
         {
             //partstexts[i].color = new Color(255,255,255,255);
             if (GameControllScript.pn[i] == 1)
             {
-                partstexts[i].text = "取り換え完了";
+                if (GameControllScript.pn[3] == 1)
+                {
+                    partstexts[i].text = "取り換え完了";
+                }
+                else
+                {
+                    partstexts[i].text = "取り換えできない";
+                }
             }
         }
 

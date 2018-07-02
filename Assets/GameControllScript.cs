@@ -8,6 +8,7 @@ public class GameControllScript : MonoBehaviour {
     public GameObject Player;
     [SerializeField]
     private float timespeed;
+    [SerializeField] private int BatteryTime;
 
     // 0 ～ 3: 残量
     // 1 ～ n: 個数
@@ -43,6 +44,8 @@ public class GameControllScript : MonoBehaviour {
             //c.a = 0.5f;
             Parts[i].color = PartsColor;
         }
+
+        batteryn = BatteryTime;
     }
 	
 	// Update is called once per frame

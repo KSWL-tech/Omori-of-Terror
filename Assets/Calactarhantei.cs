@@ -12,6 +12,8 @@ public class Calactarhantei : MonoBehaviour
     public GameObject door;
     public GameObject locker;
     private PartsTextScript PartsTexts;
+    public GameObject Bike;
+    public GameObject Wall;
 
 
 
@@ -25,13 +27,17 @@ public class Calactarhantei : MonoBehaviour
     {
         GameController = GameObject.Find("GameController");
         PartsTexts = GameObject.Find("PartsTexts").GetComponent<PartsTextScript>();
+        KeyFrag = false;
 
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-
+        if (transform.position.y < 250)
+        {
+            SceneController.changegameover();
+        }
     }
 
     void OnControllerColliderHit(ControllerColliderHit hit)
@@ -71,6 +77,12 @@ public class Calactarhantei : MonoBehaviour
                 Bikecam.SetActive(true);
                 BikeScript.Controlflag = true;
                 BikeScript.seflag = true;
+                Rigidbody rig;
+                rig = Bike.GetComponent<Rigidbody>();
+                rig.constraints = RigidbodyConstraints.None;
+                rig.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+                Wall.SetActive(false);
+
                 //SEScript.Bike_start.PlayOneShot(SEScript.Bike_start.clip);
             }
         }
