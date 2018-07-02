@@ -28,6 +28,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private AudioClip m_JumpSound;           // the sound played when character leaves the ground.
         [SerializeField] private AudioClip m_LandSound;           // the sound played when character touches back on ground.
 
+        [SerializeField] private bool Debug;
+
         private Camera m_Camera;
         private bool m_Jump;
         private float m_YRotation;
@@ -70,25 +72,30 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private void Update()
         {
             RotateView();
-            // the jump state needs to read here to make sure it is not missed
-            if (!m_Jump)
-            {
-                m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
-            }
 
-            if (!m_PreviouslyGrounded && m_CharacterController.isGrounded)
+            if (Debug == false)
             {
-                StartCoroutine(m_JumpBob.DoBobCycle());
-                PlayLandingSound();
-                m_MoveDir.y = 0f;
-                m_Jumping = false;
-            }
-            if (!m_CharacterController.isGrounded && !m_Jumping && m_PreviouslyGrounded)
-            {
-                m_MoveDir.y = 0f;
-            }
+                // the jump state needs to read here to make sure it is not missed
+                if (!m_Jump)
+                {
+                    m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
+                }
 
-            m_PreviouslyGrounded = m_CharacterController.isGrounded;
+                if (!m_PreviouslyGrounded && m_CharacterController.isGrounded)
+                {
+                    StartCoroutine(m_JumpBob.DoBobCycle());
+                    PlayLandingSound();
+                    m_MoveDir.y = 0f;
+                    m_Jumping = false;
+                }
+                if (!m_CharacterController.isGrounded && !m_Jumping && m_PreviouslyGrounded)
+                {
+                    m_MoveDir.y = 0f;
+                }
+
+                m_PreviouslyGrounded = m_CharacterController.isGrounded;
+
+            }
         }
 
 
@@ -121,7 +128,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 m_MoveDir.y = -m_StickToGroundForce;
 
-                if (m_Jump)
+                if (m_Jump && Debug == true)
                 {
                     m_MoveDir.y = m_JumpSpeed;
                     PlayJumpSound();
@@ -237,6 +244,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             // On standalone builds, walk/run speed is modified by a key press.
             // keep track of whether or not the character is walking or running
             m_IsWalking = !Input.GetKey(KeyCode.LeftShift);
+            if (Debug == false) m_IsWalking = true;
 #endif
             // set the desired speed to be walking or running
             speed = m_IsWalking ? m_WalkSpeed : m_RunSpeed;
