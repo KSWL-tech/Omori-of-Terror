@@ -73,7 +73,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             RotateView();
 
-            if (Debug == false)
+            if (Debug == true)
             {
                 // the jump state needs to read here to make sure it is not missed
                 if (!m_Jump)
