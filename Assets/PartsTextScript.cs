@@ -38,7 +38,7 @@ public class PartsTextScript : MonoBehaviour {
                 }
                 else
                 {
-                    partstexts[i].text = "取り換えできない";
+                    partstexts[i].text = " 工具がないため取り換えできない";
                 }
             }
         }

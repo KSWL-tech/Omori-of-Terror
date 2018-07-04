@@ -15,6 +15,7 @@ public class GameControllScript : MonoBehaviour {
     public GameObject [] Battery;
     private int bc = 3 , bc2 = 1;
     private int bn, bn2;
+    private int batterycount;
     public int pace = 30;//バッテリーの持ち時間
     public static float batteryn = 119;//バッテリーの総持ち時間
     //public static float batteryn = 20;//バッテリーの総持ち時間
@@ -28,7 +29,7 @@ public class GameControllScript : MonoBehaviour {
     private bool batteryend = false;
     public GameObject BatteryEnemy;
 
-
+    public GameObject lite;
 
     [SerializeField] private bool debug;
 
@@ -51,29 +52,62 @@ public class GameControllScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-
-        //説明が複雑だ
-
-        if((int)batteryn % 10 != bc2 && (int)batteryn % 10 == 0)
+        if (BikeScript.Controlflag)
         {
-            Battery[bc].SetActive(false);
-            bc -= 1;
-            if (bc < 1) bc = 3;
-            Battery[bc].SetActive(true);
-            bc2 = bc;
+            for (int i = 0; i < Battery.Length; i++)
+            {
+                Battery[i].SetActive(false);
+            }
         }
-       
-        bc2 = (int)batteryn % 10;
 
-        batteryn -= 1;
-        bn = (int)(batteryn / pace) + 3;
-        
-       // Debug.Log(bn);
-        if(bn != bn2)
+
+        if (batteryend == false && BikeScript.Controlflag == false)
         {
+            //説明が複雑だ
+            /*
+
+            if ((int)batteryn % 10 != bc2 && (int)batteryn % 10 == 0)
+            {
+                Battery[bc].SetActive(false);
+                bc -= 1;
+                if (bc < 1) bc = 3;
+                Battery[bc].SetActive(true);
+                bc2 = bc;
+            }
+
+            bc2 = (int)batteryn % 10;
+
+            batteryn -= 1;
+            bn = (int)(batteryn / pace) + 3;
+
+            // Debug.Log(bn);
+            if (bn != bn2)
+            {
+                for (int i = 4; i < Battery.Length; i++)
+                {
+                    if (i > bn)
+                    {
+                        Battery[i].SetActive(false);
+                    }
+                    else
+                    {
+                        Battery[i].SetActive(true);
+                    }
+                }
+            }
+            bn2 = bn;
+            batteryn += 1;
+            */
+
+
+            // Battery[4 ～]の処理
+
+
+            bn = (int)(batteryn / pace) + 3;
+
             for (int i = 4; i < Battery.Length; i++)
             {
-                if (i > bn )
+                if (i > bn)
                 {
                     Battery[i].SetActive(false);
                 }
@@ -82,18 +116,50 @@ public class GameControllScript : MonoBehaviour {
                     Battery[i].SetActive(true);
                 }
             }
+
+            //Battery[0～3]の処理
+            batterycount = (int)batteryn - (pace * (bn - 3));
+            //print(batterycount);
+
+            for(int i = 0; i < 4; i++)
+            {
+                Battery[i].SetActive(false);
+            }
+
+            if (batterycount > 0 && batterycount < 10)
+            {
+                Battery[0].SetActive(true);
+            }
+            else if(batterycount >= 10 && batterycount < 20)
+            {
+                Battery[1].SetActive(true);
+            }
+            else if(batterycount >= 20 && batterycount < 30)
+            {
+                Battery[2].SetActive(true);
+            }
+            else
+            {
+                Battery[3].SetActive(true);
+            }
+
+
+            batteryn -= Time.deltaTime * timespeed;
+
         }
-        bn2 = bn;
-        batteryn += 1;
-
-
-        batteryn -= Time.deltaTime * timespeed ;
 
         //バッテリー切れ処理
-        if(batteryn < 0 && batteryend  == false)
+        if(batteryn < 2 && batteryend  == false)
         {
             Debug.Log("バッテリーなくなった");
-            BatteryEnemy.GetComponent<BatteryGameOver>().BatteryLost();
+            //BatteryEnemy.GetComponent<BatteryGameOver>().BatteryLost();
+            StartCoroutine("Over");
+            lite.SetActive(false);
+            for (int i = 0; i < Battery.Length; i++)
+            {
+                    Battery[i].SetActive(false);                         
+            }
+
             batteryend = true;
         }
 
@@ -123,5 +189,11 @@ public class GameControllScript : MonoBehaviour {
 
 
 
+    }
+
+    IEnumerator Over()
+    {
+        yield return new WaitForSeconds(10);
+        BatteryEnemy.GetComponent<BatteryGameOver>().BatteryLost();
     }
 }

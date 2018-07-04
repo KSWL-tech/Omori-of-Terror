@@ -13,6 +13,7 @@ TagManager:
   - Enemy
   - LockerDoor
   - Obstacle
+  - Battery
   layers:
   - Default
   - TransparentFX
