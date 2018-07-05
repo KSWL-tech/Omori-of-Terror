@@ -14,7 +14,7 @@ public class SceneController : MonoBehaviour {
 	void Update () {
         if (Input.GetKey(KeyCode.Escape))
         {
-            Application.Quit();
+           // Application.Quit();
         }
     }
 
