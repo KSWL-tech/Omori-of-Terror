@@ -8,19 +8,19 @@ public class clawnbaby_controll : MonoBehaviour {
     UnityEngine.AI.NavMeshAgent agent;
     public float speed, diff;
     public Vector3 pos, pastpos;
-    // Use this for initialization
     Quaternion def_rotation;
     void Start () {
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         agent.SetDestination(target.transform.position);
-        def_rotation=transform.rotation; //回転しないように。y軸周りの回転はLookAtでやってくれるので、x、z軸回転を固定に
+        def_rotation=transform.rotation; //回転しないように。y軸周りの回転はLookAtでやってくれるので、x、z軸回転を固定にしようと思う
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        transform.LookAt(target.transform.position);
         agent.SetDestination(target.transform.position);
-        transform.rotation=def_rotation;
+        this.transform.LookAt(target.transform.position);
+        this.transform.rotation = Quaternion.Euler(def_rotation.x, transform.rotation.y, def_rotation.z);
+
         /* 
         if (!isNav) //ハマるまでは単純にTranslate
         {
