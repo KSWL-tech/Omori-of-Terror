@@ -25,6 +25,7 @@ public class Clear : MonoBehaviour {
         {
             panel.color += new Color(0, 0, 0, speed / 100);
             text.color += new Color(0, 0, 0, speed / 100);
+            SEScript.Bike_go.volume -= 0.01f;
 
         }
     }
@@ -42,7 +43,9 @@ public class Clear : MonoBehaviour {
     {
         if(other.gameObject.tag == "Bike")
         {
+            BikeScript.clear = true;
             clearflag = true;
+            StartCoroutine("End");
         }
     }
 }

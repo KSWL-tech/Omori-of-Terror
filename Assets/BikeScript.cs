@@ -15,6 +15,7 @@ public class BikeScript : MonoBehaviour {
     public GameObject breaked_enemy;
     public GameObject BikeCamera;
     public GameObject Bike_Mazzle;
+    public static bool clear;
 
 
 
@@ -24,12 +25,13 @@ public class BikeScript : MonoBehaviour {
         GameController = GameObject.Find("GameController");
         Controlflag = false;
         seflag = false;
+        clear = false;
 
-        
-	}
-	
-	// Update is called once per frame
-	void FixedUpdate () {
+
+    }
+
+    // Update is called once per frame
+    void FixedUpdate () {
         if (Controlflag == true)
         {
             float translation = Input.GetAxis("Vertical") * speed;
@@ -51,7 +53,7 @@ public class BikeScript : MonoBehaviour {
             StartCoroutine("GameOver");
         }
 
-        if(transform.position.y < 250)
+        if(transform.position.y < 250 && clear == false)
         {
             SceneController.changegameover();
         }
