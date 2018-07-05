@@ -28,7 +28,6 @@ public class Calactarhantei : MonoBehaviour
         GameController = GameObject.Find("GameController");
         PartsTexts = GameObject.Find("PartsTexts").GetComponent<PartsTextScript>();
         KeyFrag = false;
-
     }
 
     // Update is called once per frame
@@ -98,7 +97,7 @@ public class Calactarhantei : MonoBehaviour
 
         if (hit.gameObject.tag == "Enemy")
         {
-            SceneController.changegameover();
+            //SceneController.changegameover();
         }
 
         if (hit.gameObject.tag == "LockerDoor")
