@@ -9,6 +9,8 @@ public class clawnbaby_controll : MonoBehaviour {
     public float speed, diff;
     public Vector3 pos, pastpos;
     Quaternion def_rotation;
+
+    public float dist;
     void Start () {
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         agent.SetDestination(target.transform.position);
@@ -18,9 +20,20 @@ public class clawnbaby_controll : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         agent.SetDestination(target.transform.position);
-        this.transform.LookAt(target.transform.position);
-        this.transform.rotation = Quaternion.Euler(def_rotation.x, transform.rotation.y, def_rotation.z);
+        //this.transform.LookAt(target.transform.position);
+        //this.transform.rotation = Quaternion.Euler(def_rotation.x, transform.rotation.y, def_rotation.z);
 
+
+        /*if(Vector3.Distance(target.transform.position, transform.position) < dist)
+        {
+            isNav = false;
+            transform.Translate(0, 0, speed);
+            print("Nav off");
+        }
+        else
+        {
+            isNav = true;
+        }*/
         /* 
         if (!isNav) //ハマるまでは単純にTranslate
         {
