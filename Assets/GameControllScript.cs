@@ -104,6 +104,8 @@ public class GameControllScript : MonoBehaviour {
 
 
             bn = (int)(batteryn / pace) + 3;
+            print("batterynum " + batteryn);
+            print("bn " + bn);
 
             for (int i = 4; i < Battery.Length; i++)
             {
@@ -120,13 +122,14 @@ public class GameControllScript : MonoBehaviour {
             //Battery[0～3]の処理
             batterycount = (int)batteryn - (pace * (bn - 3));
             //print(batterycount);
+            print("bc " + batterycount);
 
             for(int i = 0; i < 4; i++)
             {
                 Battery[i].SetActive(false);
             }
 
-            if (batterycount > 0 && batterycount < 10)
+            if (batterycount >= 0 && batterycount < 10)
             {
                 Battery[0].SetActive(true);
             }
