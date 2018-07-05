@@ -15487,6 +15487,7 @@ MonoBehaviour:
   diff: 10
   pos: {x: 0, y: 0, z: 0}
   pastpos: {x: 0, y: 0, z: 0}
+  dist: 0
 --- !u!195 &683414317
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -38376,6 +38377,7 @@ GameObject:
   - component: {fileID: 1700305977}
   - component: {fileID: 1700305979}
   - component: {fileID: 1700305978}
+  - component: {fileID: 1700305980}
   m_Layer: 0
   m_Name: "\u9854\u900F\u904Ever"
   m_TagString: Enemy
@@ -38453,6 +38455,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1700305980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1700305976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07eb4cc19876075479d83159fb9be4c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 820563058}
 --- !u!1001 &1702115996
 Prefab:
   m_ObjectHideFlags: 0
@@ -40319,7 +40333,7 @@ GameObject:
   - component: {fileID: 1786628733}
   m_Layer: 0
   m_Name: "\u5224\u5B9A"
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40407,7 +40421,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.6
+  m_Radius: 0.7
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &1786628737
 MeshFilter:
@@ -44749,10 +44763,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 820563058}
-  speed: 0.6
+  speed: 0.3
   diff: 10
   pos: {x: 0, y: 0, z: 0}
   pastpos: {x: 0, y: 0, z: 0}
+  dist: 15
 --- !u!82 &2040158402
 AudioSource:
   m_ObjectHideFlags: 0
