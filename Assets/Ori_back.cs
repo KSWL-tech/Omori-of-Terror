@@ -23,4 +23,10 @@ public class Ori_back : MonoBehaviour {
         anim.SetTrigger("open");
         SEScript.irondoor.PlayOneShot(SEScript.irondoor.clip);
     }
+
+    public void close()
+    {
+        anim.SetTrigger("close");
+        SEScript.irondoor.PlayOneShot(SEScript.irondoor.clip);
+    }
 }

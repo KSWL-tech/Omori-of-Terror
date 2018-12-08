@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.AI;
 
 public class GameControllScript : MonoBehaviour {
 
@@ -32,6 +33,10 @@ public class GameControllScript : MonoBehaviour {
     public GameObject lite;
 
     [SerializeField] private bool debug;
+
+
+    public GameObject enemy;
+    
 
 
 
@@ -104,8 +109,8 @@ public class GameControllScript : MonoBehaviour {
 
 
             bn = (int)(batteryn / pace) + 3;
-            print("batterynum " + batteryn);
-            print("bn " + bn);
+          //  print("batterynum " + batteryn);
+          //  print("bn " + bn);
 
             for (int i = 4; i < Battery.Length; i++)
             {
@@ -122,7 +127,7 @@ public class GameControllScript : MonoBehaviour {
             //Battery[0～3]の処理
             batterycount = (int)batteryn - (pace * (bn - 3));
             //print(batterycount);
-            print("bc " + batterycount);
+           // print("bc " + batterycount);
 
             for(int i = 0; i < 4; i++)
             {
@@ -162,9 +167,11 @@ public class GameControllScript : MonoBehaviour {
             {
                     Battery[i].SetActive(false);                         
             }
-
+            enemy.SetActive(false);
             batteryend = true;
         }
+
+
 
         //Debug.Log(batteryn);
 

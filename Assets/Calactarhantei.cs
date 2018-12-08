@@ -14,6 +14,7 @@ public class Calactarhantei : MonoBehaviour
     private PartsTextScript PartsTexts;
     public GameObject Bike;
     public GameObject Wall;
+    public GameObject baby;
 
 
 
@@ -54,6 +55,14 @@ public class Calactarhantei : MonoBehaviour
             backtobira.GetComponent<Ori_back>().open();
             hit.gameObject.SetActive(false);
             print("hit");
+        }
+
+        if(hit.gameObject.tag == "close")
+        {
+            backtobira.GetComponent<Ori_back>().close();
+            hit.gameObject.SetActive(false);
+            baby.SetActive(true);
+            baby.GetComponent<AudioSource>().Play();
         }
 
         if (hit.gameObject.tag == "Key")

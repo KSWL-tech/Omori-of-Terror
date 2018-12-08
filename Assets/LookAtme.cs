@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class LookAtme : MonoBehaviour {
     public GameObject target;
+    public GameObject parent;
+    [SerializeField] private Vector3 pos;
 
     // Use this for initialization
     void Start () {
@@ -12,7 +14,11 @@ public class LookAtme : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        this.transform.LookAt(target.transform.position);
 
+       // Vector3 temp = parent.transform.position;
+       // temp += pos;
+
+        this.transform.LookAt(target.transform.position);
+       // transform.position = temp;
     }
 }
