@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class numa : MonoBehaviour {
 
@@ -8,10 +9,12 @@ public class numa : MonoBehaviour {
     public GameObject tibigomori;
     private float speed;
     public static bool numaflag = false;
+    public GameObject mainenemy;
 
     // Use this for initialization
     void Start () {
 		speed = UnityStandardAssets.Characters.FirstPerson.FirstPersonController.bufSpeed / 2f;
+        mainenemy.GetComponent<NavMeshAgent>();
     }
 	
 	// Update is called once per frame
@@ -34,7 +37,7 @@ public class numa : MonoBehaviour {
         {
             UnityStandardAssets.Characters.FirstPerson.FirstPersonController.bufSpeed = speed;
             UnityStandardAssets.Characters.FirstPerson.FirstPersonController.numasound = true;
-
+            mainenemy.GetComponent<NavMeshAgent>().speed = 0;
         }
     }
 
@@ -44,8 +47,8 @@ public class numa : MonoBehaviour {
             UnityStandardAssets.Characters.FirstPerson.FirstPersonController.numasound = false;
 
             anagomori.SetActive(false);
-           // tibigomori.SetActive(true);
-
+            // tibigomori.SetActive(true);
+            mainenemy.GetComponent<NavMeshAgent>().speed = 5;
             TibiAnimeScript.tibiflag = true;
         }
     }
