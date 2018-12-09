@@ -19,6 +19,7 @@ public class LookAtme : MonoBehaviour {
        // temp += pos;
 
         this.transform.LookAt(target.transform.position);
+        transform.Rotate( 0, 180, 0);
        // transform.position = temp;
     }
 }
