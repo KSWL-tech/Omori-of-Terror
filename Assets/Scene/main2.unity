@@ -5,11 +5,11 @@ OcclusionCullingSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_OcclusionBakeSettings:
-    smallestOccluder: 5
+    smallestOccluder: 3
     smallestHole: 0.25
     backfaceThreshold: 100
-  m_SceneGUID: 824c1cff8d2d2cb46816bce08556b9cf
-  m_OcclusionCullingData: {fileID: 36300000, guid: 963aa9f9b50181c4f8b8af808b968aea,
+  m_SceneGUID: b735060969203d941b14d07ce090942a
+  m_OcclusionCullingData: {fileID: 36300000, guid: ad17fc100fc029149bf2cfe8027e5c64,
     type: 2}
 --- !u!104 &2
 RenderSettings:
@@ -2370,7 +2370,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &138867533
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6331,10 +6331,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef31a064ddab5d449a1a4441ea5a07dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1847410461}
+  player: {fileID: 820563058}
   bike: {fileID: 2135260994}
   player_muzzle: {fileID: 747339274}
-  speed: 0.3
+  speed: 0.15
   dist: 3
 --- !u!1 &440681357
 GameObject:
@@ -19183,7 +19183,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 34
+  m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: -174.77701, z: 0}
 --- !u!114 &1226537672
 MonoBehaviour:
@@ -23754,7 +23754,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4315757625577394, guid: feb17e4142d1f5f4e819156aea01475e, type: 2}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4315757625577394, guid: feb17e4142d1f5f4e819156aea01475e, type: 2}
       propertyPath: m_LocalScale.y
@@ -28739,7 +28739,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 2000000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: far clip plane
-      value: 50
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: m_WalkSpeed
@@ -28775,7 +28775,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: m_UseHeadBob
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: m_Constraints
@@ -29588,8 +29588,13 @@ Prefab:
     - target: {fileID: 95358662512241224, guid: 74e74687e25f2c54ea124d00331b67f3,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 95358662512241224, guid: 74e74687e25f2c54ea124d00331b67f3,
+        type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b46f494a0da17d34e943cc1d789d0ce5, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 74e74687e25f2c54ea124d00331b67f3, type: 2}
   m_IsPrefabParent: 0
@@ -29965,7 +29970,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4453603941406950, guid: d67ca9ec46b3b9443b9bef8d9465e8b9, type: 2}
       propertyPath: m_RootOrder
-      value: 35
+      value: 34
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d67ca9ec46b3b9443b9bef8d9465e8b9, type: 2}
@@ -32968,7 +32973,7 @@ Transform:
   - {fileID: 1280982140}
   - {fileID: 557103351}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: -86.02801, z: 0}
 --- !u!114 &2135261000
 MonoBehaviour:
