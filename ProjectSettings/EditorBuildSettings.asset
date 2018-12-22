@@ -5,13 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scene/Title.unity
     guid: e7c7bf1e0f85da54f85cd5c2602c66fc
   - enabled: 0
     path: Assets/Scene/Cregit.unity
     guid: cafcc5ddd52eac34286958d1b74b7869
   - enabled: 1
+    path: Assets/Scene/main2.unity
+    guid: b735060969203d941b14d07ce090942a
+  - enabled: 0
     path: Assets/Scene/Nodoka.unity
     guid: 824c1cff8d2d2cb46816bce08556b9cf
   - enabled: 1
