@@ -15,6 +15,7 @@ TagManager:
   - Obstacle
   - Battery
   - close
+  - EyeCol
   layers:
   - Default
   - TransparentFX
