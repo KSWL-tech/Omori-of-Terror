@@ -5,6 +5,7 @@ using UnityEngine;
 public class GimmickEyes : MonoBehaviour {
 
     public GameObject eyes;
+    public GameObject stopcol;
 
 	// Use this for initialization
 	void Start () {
@@ -21,6 +22,9 @@ public class GimmickEyes : MonoBehaviour {
         if(other.gameObject.tag == "Player")
         {
             eyes.SetActive(true);
+            stopcol.SetActive(true);
         }
     }
+
+    
 }
