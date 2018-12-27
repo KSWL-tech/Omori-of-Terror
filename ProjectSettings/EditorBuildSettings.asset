@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scene/Cregit.unity
     guid: cafcc5ddd52eac34286958d1b74b7869
   - enabled: 1
+    path: Assets/Scene/nodoka2.unity
+    guid: 1c7251d5342251f468d67d553df33ad2
+  - enabled: 0
     path: Assets/Scene/main2.unity
     guid: b735060969203d941b14d07ce090942a
   - enabled: 0
