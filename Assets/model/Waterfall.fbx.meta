@@ -1,43 +1,23 @@
 fileFormatVersion: 2
-guid: c7653d74a3e584b4dae3682f40c84690
-timeCreated: 1530719226
+guid: 65e139448f3549a4a8ceac298a6251e1
+timeCreated: 1545810173
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
-    100002: "\u30CC\u30EB"
-    100004: "\u5186\u67F1"
-    100006: "\u5186\u67F1_1"
-    100008: "\u7ACB\u65B9\u4F53"
-    100010: "\u7ACB\u65B9\u4F53_1"
     400000: //RootNode
-    400002: "\u30CC\u30EB"
-    400004: "\u5186\u67F1"
-    400006: "\u5186\u67F1_1"
-    400008: "\u7ACB\u65B9\u4F53"
-    400010: "\u7ACB\u65B9\u4F53_1"
-    2100000: Mat.1
-    2100002: Mat
-    2300000: "\u5186\u67F1"
-    2300002: "\u5186\u67F1_1"
-    2300004: "\u7ACB\u65B9\u4F53"
-    2300006: "\u7ACB\u65B9\u4F53_1"
-    3300000: "\u5186\u67F1"
-    3300002: "\u5186\u67F1_1"
-    3300004: "\u7ACB\u65B9\u4F53"
-    3300006: "\u7ACB\u65B9\u4F53_1"
-    4300000: "\u5186\u67F1_1"
-    4300002: "\u7ACB\u65B9\u4F53_1"
-    4300004: "\u5186\u67F1"
-    4300006: "\u7ACB\u65B9\u4F53"
+    2100000: lambert2
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: WaterFall
     9500000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
