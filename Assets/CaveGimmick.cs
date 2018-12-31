@@ -7,6 +7,7 @@ public class CaveGimmick : MonoBehaviour {
     public GameObject beforeRoad;
     public GameObject afterRoad;
     public CaveRenderingSetting CaveRenderingSetting;
+    public MeshRenderer water;
 
 	// Use this for initialization
 	void Start () {
@@ -25,6 +26,7 @@ public class CaveGimmick : MonoBehaviour {
             beforeRoad.SetActive(false);
             afterRoad.SetActive(true);
             CaveRenderingSetting.CaveOut();
+            water.enabled = false;
         }
     }
 }
